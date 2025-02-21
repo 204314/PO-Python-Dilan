@@ -57,6 +57,7 @@ def next_turn(snake, food):
     snake.coordinates.insert(0, (x, y))
     square = canvas.create_rectangle(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=SNAKE_COLOR)
     snake.squares.insert(0, square)
+    #https://www.youtube.com/watch?v=QFvqStqPCRU&t=9s
     
     # Check of slang eten raakt
     if x == food.coordinates[0] and y == food.coordinates[1]:
@@ -89,6 +90,7 @@ def change_direction(new_direction):
         direction = new_direction
     elif new_direction == 'down' and direction != 'up':
         direction = new_direction
+#https://www.youtube.com/watch?v=idZj9NWtqGE
     
 def check_collisions(snake):
     # Botsing controleren
@@ -114,6 +116,7 @@ def game_over():
     restart_button = Button(window, text="Play Again", font=('consolas', 20), command=restart_game)
     restart_button.place(x=GAME_WIDTH/2 - 80, y=GAME_HEIGHT/2 + 110)
     window.restart_button = restart_button
+    # https://www.youtube.com/watch?v=x5AHtW9UuVo&t=23s
     
 def restart_game():
     # Spel opnieuw starten
@@ -160,12 +163,14 @@ x = int((screen_width/2) - (window_width/2))
 y = int((screen_height/2) - (window_height/2))
 
 window.geometry(f"{window_width}x{window_height}+{x}+{y}")
+#https://www.youtube.com/watch?v=Uq_GxIQWiVM
 
 # Besturing koppelen
 window.bind('<Left>', lambda event: change_direction('left'))
 window.bind('<Right>', lambda event: change_direction('right'))
 window.bind('<Up>', lambda event: change_direction('up'))
 window.bind('<Down>', lambda event: change_direction('down'))
+#https://www.geeksforgeeks.org/how-to-bind-the-enter-key-to-a-tkinter-window/?
 
 # Spel starten
 snake = Snake()
@@ -173,3 +178,5 @@ food = Food(snake)
 next_turn(snake, food)
 
 window.mainloop() 
+
+#https://www.youtube.com/watch?v=lyoyTlltFVU&list=PLZPZq0r_RZOOeQBaP5SeMjl2nwDcJaV0T
